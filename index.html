@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Channels</title>
+    <style>
+        :root {
+            --surface-color: #fff;
+            --curve: 40;
+          }
+          
+          * {
+            box-sizing: border-box;
+          }
+          
+          body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #fef8f8;
+          }
+          
+          .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 5vw;
+            padding: 0;
+            list-style-type: none;
+          }
+          
+          .card {
+            position: relative;
+            display: block;
+            height: 100%;  
+            border-radius: calc(var(--curve) * 1px);
+            overflow: hidden;
+            text-decoration: none;
+          }
+          
+          .card__image {      
+            width: 100%;
+            height: auto;
+          }
+          
+          .card__overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;      
+            border-radius: calc(var(--curve) * 1px);    
+            background-color: var(--surface-color);      
+            transform: translateY(100%);
+            transition: .2s ease-in-out;
+          }
+          
+          .card:hover .card__overlay {
+            transform: translateY(0);
+          }
+          
+          .card__header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            padding: 2em;
+            border-radius: calc(var(--curve) * 1px) 0 0 0;    
+            background-color: var(--surface-color);
+            transform: translateY(-100%);
+            transition: .2s ease-in-out;
+          }
+          
+          .card__arc {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            bottom: 100%;
+            right: 0;      
+            z-index: 1;
+          }
+          
+          .card__arc path {
+            fill: var(--surface-color);
+            d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+          }       
+          
+          .card:hover .card__header {
+            transform: translateY(0);
+          }
+          
+          .card__thumb {
+            flex-shrink: 0;
+            width: 50px;
+            height: 50px;      
+            border-radius: 50%;      
+          }
+          
+          .card__title {
+            font-size: 1em;
+            margin: 0 0 .3em;
+            color: #6A515E;
+          }
+          
+          .card__tagline {
+            display: block;
+            margin: 1em 0;
+            font-family: "MockFlowFont";  
+            font-size: .8em; 
+            color: #D7BDCA;  
+          }
+          
+          .card__status {
+            font-size: .8em;
+            color: #D7BDCA;
+          }
+          
+          .card__description {
+            padding: 0 2em 2em;
+            margin: 0;
+            color: #D7BDCA;
+            font-family: "MockFlowFont";   
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+          }
+    </style>
+</head>
+<body>
+    <ul class="cards">
+        <li>
+          <a href="https://t.me/Arxivatsiya" class="card">
+            <img src="../img/arxivatsiya.jpg" class="card__image" alt="" />
+            <div class="card__overlay">
+              <div class="card__header">
+                <svg class="card__arc" xmlns=""><path /></svg>                     
+                <img class="card__thumb" src="../img/rakhmatov.jpg" alt="" />
+                <div class="card__header-text">
+                  <h3 class="card__title">rakhmatov_1337</h3>            
+                  <span class="card__status">1 hour ago</span>
+                </div>
+              </div>
+              <p class="card__description">My simple blog 🙂🎧
+
+                Ps: If you don't like it, thank you very much</p>
+            </div>
+          </a>      
+        </li>
+        <li>
+          <a href="https://t.me/kommentologiya" class="card">
+            <img src="../img/john.jpg" class="card__image" alt="" />
+            <div class="card__overlay">        
+              <div class="card__header">
+                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+                <img class="card__thumb" src="../img/john.jpg" alt="" />
+                <div class="card__header-text">
+                  <h3 class="card__title">John Bro</h3>
+                  <span class="card__status">3 hours ago</span>
+                </div>
+              </div>
+              <p class="card__description">Shunchaki shaxsiy kontent:
+                #entertainment
+                #sociology
+                #science
+                #football©Life never be easy, you have to be stronger than before</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/+Kti7Qe1FHxpjMTky" class="card">
+            <img src="../img/kaktuscha.jpg" class="card__image" alt="" />
+            <div class="card__overlay">
+              <div class="card__header">
+                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                     
+                <img class="card__thumb" src="../img/kaktuscha1.jpg" alt="" />
+                <div class="card__header-text">
+                  <h3 class="card__title">Дикая...</h3>
+                  <span class="card__tagline">Kaktuscha</span>            
+                  <span class="card__status">1 hour ago</span>
+                </div>
+              </div>
+              <p class="card__description">Хуш келбсан қоқиндиқ😌 
+
+                "Қилаётган қароринг тақдирингни белгилайди"
+                
+                Манфаат кутмасдан, кетган вақтинга рози бўл⏳</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/fatimah_planet" class="card">
+            <img src="../img/fatimah.jpg" class="card__image" alt="" />
+            <div class="card__overlay">
+              <div class="card__header">
+                <svg class="card__arc" xmlns="http://www.w3.org/2000/svg"><path /></svg>                 
+                <img class="card__thumb" src="../img/fatimah1.jpg" alt="" />
+                <div class="card__header-text">
+                  <h3 class="card__title">Fatimah...</h3>
+                  <span class="card__status">3 hours ago</span>
+                </div>          
+              </div>
+              <p class="card__description">Istaganimni tashlayman..🔕
+                Manbasiz chopilgan postlarga rozimasman🚫
+                About Fatima 
+                Mendan qoladigan xotiralar...
+                26.11.2022🐾</p>
+            </div>
+          </a>
+        </li>
+        <li>
+            <a href="https://t.me/+j18WfK2ze6I4NGRi" class="card">
+              <img src="../img/Elza.jpg" class="card__image" alt="" />
+              <div class="card__overlay">
+                <div class="card__header">
+                  <svg class="card__arc" xmlns=""><path /></svg>                     
+                  <img class="card__thumb" src="../img/Elza1.jpg" alt="" />
+                  <div class="card__header-text">
+                    <h3 class="card__title">Elizabet</h3>            
+                    <span class="card__status">1 hour ago</span>
+                  </div>
+                </div>
+                <p class="card__description">Shaxsiy blog... Yozaman... His qilasan...
+                    Shaxsiy savollarga javob berilmaydi 🙂</p>
+              </div>
+            </a>      
+          </li> 
+      </ul>
+</body>
+</html>
